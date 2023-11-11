@@ -48,11 +48,14 @@ def start_lotto_game():
     user_nums = []
     for i in range(6):
         while True:
-            number = int(input(f"Enter the {i+1} number between 1 and 49: "))
-            if 1 <= number <= 49:
-                break
-            else:
-                print("Please enter a number between 1 and 49!")
+            try:
+                number = int(input(f"Enter the {i+1} number between 1 and 49: "))
+                if 1 <= number <= 49:
+                    break
+                else:
+                    print("Please enter a number between 1 and 49!")
+            except ValueError:
+                print("Invalid input. Please enter a number between 1 and 49...")
         user_nums.append(number)
     
     lotto_nums = lotto_game.generate_numbers()
