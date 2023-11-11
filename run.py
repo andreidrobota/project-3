@@ -43,20 +43,24 @@ def start_lotto_game():
     """
     Function to start the Lotto Game
     """
+    print("Welcome to the Lotto Game\n")
+
     lotto_game = Lotto()
     
-    user_nums = []
+    user_nums = set()
     for i in range(6):
         while True:
             try:
                 number = int(input(f"Enter the {i+1} number between 1 and 49: "))
-                if 1 <= number <= 49:
+                if 1 <= number <= 49 and number not in user_nums:
+                    user_nums.add(number)
                     break
+                elif number in user_nums:
+                    print("You already entered this number, pick a new one!")
                 else:
                     print("Please enter a number between 1 and 49!")
             except ValueError:
                 print("Invalid input. Please enter a number between 1 and 49...")
-        user_nums.append(number)
     
     lotto_nums = lotto_game.generate_numbers()
     print("Lotto numbers: ", lotto_nums)
