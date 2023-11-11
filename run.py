@@ -83,7 +83,7 @@ def start_lotto_multiplayer(num_players):
         for i in range(6):
             while True:
                 try:
-                    number = int(input(f"Player {player}, enter the {i+1} number between 1 and 49"))
+                    number = int(input(f"Player {player}, enter the {i+1} number between 1 and 49: "))
                     if 1 <= number <= 49 and number not in user_nums:
                         user_nums.add(number)
                         break
@@ -94,12 +94,39 @@ def start_lotto_multiplayer(num_players):
                 except ValueError:
                     print("Invalid input. Please enter a number between 1 and 49.")
         
-        players_data.append(player, user_nums)
+        players_data.append((player, user_nums))
+        print(f"\nPlayer {player} has finished entering numbers. \n")
     
     lotto_nums = lotto_game.generate_numbers()
     print("\nLotto numbers: ", lotto_nums)
 
     for player, user_nums in players_data:
         result = lotto_game.check_numbers(user_nums)
-        print(f"\nPlayer {player}: {result}")
+        print(f"\nPlayer {player}: {result}\n")
 
+def main():
+    """
+    Main function to handle the users input
+    and decide which mode to select
+    """
+
+    print("Welcome to the Lotto Game!\n")
+
+    while True:
+        try:
+            game_mode = int(input("Chose a gome mode:\n1. Single Player\n2. Multiplayer\n3. Quit\n"))
+
+            if game_mode == 1:
+                start_lotto_game()
+            elif game_mode == 2:
+                num_players = int(input("Please enter number of players: "))
+                start_lotto_multiplayer(num_players)
+            elif game_mode == 3:
+                print("Exiting game... Goodbye!")
+                break
+            else:
+                print("Invalid choice! Please enter 1, 2, or 3.")
+        except ValueError:
+            print("Invalid input. Please enter 1,2, or 3.")
+
+main()
