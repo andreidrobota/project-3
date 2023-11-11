@@ -39,10 +39,26 @@ class Lotto:
             return "WOW! You got all the 6 numbers right! You are a good contestant!"
 
 
-def lotto_game():
+def start_lotto_game():
     """
     Function to start the Lotto Game
     """
+    lotto_game = Lotto()
+    
+    user_nums = []
+    for i in range(6):
+        while True:
+        number = int(input(f"Enter the {i+1} number between 1 and 49: "))
+        if 1 <= number <= 49:
+            break
+        else:
+            print(Please enter a number between 1 and 49!)
+        user_nums.append(number)
+    
+    lotto_nums = lotto_game.generate_numbers()
+    print("Lotto numbers: ", lotto_nums)
 
+    result = lotto_game.check_numbers(user_nums)
+    print(result)
 
-lotto_game()
+start_lotto_game()
