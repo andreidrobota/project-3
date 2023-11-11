@@ -1,3 +1,15 @@
-# Your code goes here.
-# You can delete these comments, but do not change the name of this file
-# Write your code to expect a terminal of 80 characters wide and 24 rows high
+import random
+
+# Lotto Class
+
+class Lotto:
+    """ Lotto class"""
+
+
+def lotto_game():
+    """
+    Function to start the Lotto Game
+    """
+
+
+lotto_game()
