@@ -110,15 +110,17 @@ def main():
     and decide which mode to select
     """
 
-    print("Welcome to the Lotto Game!\n")
+    print("Welcome to the Lotto 6/49 Game!\n")
 
     while True:
         try:
             game_mode = int(input("Chose a gome mode:\n1. Single Player\n2. Multiplayer\n3. Quit\n"))
 
             if game_mode == 1:
+                print("You selected Single Player... Starting!")
                 start_lotto_game()
             elif game_mode == 2:
+                print("You selected Multi Player... Starting!")
                 num_players = int(input("Please enter number of players: "))
                 start_lotto_multiplayer(num_players)
             elif game_mode == 3:
