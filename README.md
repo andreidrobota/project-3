@@ -26,3 +26,25 @@ Lotto 6/49 is a popular lottery game played in many countries around the world. 
 
 ### Validator Testing
 
+- No errors were returned from [Pep8 Validator](https://pep8ci.herokuapp.com/#)
+
+### Unfixed Bugs
+
+There are no existing bugs that developer knows about, after testing in the pep8 validator and multiple times testing the app.
+
+## Deployment
+
+- This app was deployed to Heroku App. Steps:
+    - In the heroku panel, click new
+    - Deplyment method via GitHub
+    - Connect your project repository with Heroku
+    - Go to Settings:
+        - Click on Reveal config Vars
+        - KEY is PORT and VALUE is 8000
+        - Click on Add buildpack and install python and nodejs
+    - From Manual Deploy, select main branch
+
+## Credits
+
+- [W3 Schools](www.w3schools.com)
+- [Geek for Geeks](www.geeksforgeeks.org)
